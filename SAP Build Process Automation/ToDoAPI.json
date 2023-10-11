@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "This is a fake API of todo list",
+    "title": "fake.todo",
+    "version": "1.0.0"
+  },
+  "servers": [{ "url": "https://jsonplaceholder.typicode.com/" }],
+  "paths": {
+    "/todos": {
+      "get": {
+        "summary": "get list of todos",
+        "description": "get list of todos",
+        "operationId": "get.todos",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Collection of Tasks",
+                  "properties": {
+                    "responseArray": {
+                      "type": "array",
+                      "required": true,
+                      "items": {
+                        "properties": {
+                          "userId": { "type": "number" },
+                          "id": { "type": "number" },
+                          "title": { "type": "string" },
+                          "completed": { "type": "boolean" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
